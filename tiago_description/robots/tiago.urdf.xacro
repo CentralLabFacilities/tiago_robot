@@ -38,15 +38,15 @@
   </xacro:if>
         <!-- The properties below are modified using empy http://www.alcyone.com/software/empy/
              from the create_robot.py tool. Handle them with care -->
-   <property name="has_arm"                 value="$(arg arm)"/>
-   <property name="has_hey5"                value="${end_effector == 'pal-hey5'}"/>
-   <property name="has_gripper"             value="${end_effector == 'pal-gripper'}"/>
-   <property name="has_schunk_wsg"          value="${end_effector == 'schunk-wsg'}"/>
-   <property name="has_schunk_ft"           value="${ft_sensor == 'schunk-ft'}"/>
-   <property name="has_ft_sensor"           value="${has_schunk_ft}"/> <!-- This should be OR'ed with other FT sensors-->
-   <property name="end_effector_link"       value="${'wrist_ft_tool_link' if has_ft_sensor else 'arm_tool_link'}"/>
-   <property name="wrist_6_range"           value="${ 81 if has_ft_sensor else 90 }"/>
-   <property name="head_link_name"          value="head_2_link"/>
+   <xacro:property name="has_arm"                 value="$(arg arm)"/>
+   <xacro:property name="has_hey5"                value="${end_effector == 'pal-hey5'}"/>
+   <xacro:property name="has_gripper"             value="${end_effector == 'pal-gripper'}"/>
+   <xacro:property name="has_schunk_wsg"          value="${end_effector == 'schunk-wsg'}"/>
+   <xacro:property name="has_schunk_ft"           value="${ft_sensor == 'schunk-ft'}"/>
+   <xacro:property name="has_ft_sensor"           value="${has_schunk_ft}"/> <!-- This should be OR'ed with other FT sensors-->
+   <xacro:property name="end_effector_link"       value="${'wrist_ft_tool_link' if has_ft_sensor else 'arm_tool_link'}"/>
+   <xacro:property name="wrist_6_range"           value="${ 81 if has_ft_sensor else 90 }"/>
+   <xacro:property name="head_link_name"          value="head_2_link"/>
 
   <!-- The following included files set up definitions of parts of the robot body -->
   <!-- Base -->
