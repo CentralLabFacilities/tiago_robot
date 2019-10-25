@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <launch>
   <!-- Force-torque sensors controller -->
-  <rosparam command="load" file="$(find force_torque_sensor_controller)/force_torque_sensor_controller.yaml" />
+  <rosparam command="load" file="$(find tiago_controller_configuration)/config/force_torque_sensor_controller.yaml" />
 
   <!-- Controllers that come up started -->
   <node name="bringup_controllers_spawner_ft"

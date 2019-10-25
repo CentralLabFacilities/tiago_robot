@@ -26,12 +26,15 @@
     <group if="$(eval end_effector == 'schunk-wsg')">
         <rosparam command="load" file="$(find tiago_controller_configuration)/config/schunk-wsg_joint_trajectory_controllers.yaml" />
         <include file="$(find pal_wsg_gripper_controller_configuration)/launch/gripper_controller.launch"/>
-        <include file="$(find pal_wsg_gripper_controller_configuration)/launch/gripper_fingertip_sensor_controller.launch">
-          <arg name="finger" value="left"/>
-        </include>
-        <include file="$(find pal_wsg_gripper_controller_configuration)/launch/gripper_fingertip_sensor_controller.launch">
-          <arg name="finger" value="right"/>
-        </include>
+        <!-- We only want to spawn one force torque sensor controller, because one controller serves all force torque sensors -->
+        <group unless="$(eval ft_sensor == 'schunk-ft')">
+            <include file="$(find pal_wsg_gripper_controller_configuration)/launch/gripper_fingertip_sensor_controller.launch">
+              <arg name="finger" value="left"/>
+            </include>
+            <include file="$(find pal_wsg_gripper_controller_configuration)/launch/gripper_fingertip_sensor_controller.launch">
+              <arg name="finger" value="right"/>
+            </include>
+        </group>
     </group>
     <group if="$(eval end_effector == 'pal-hey5')">
         <rosparam command="load" file="$(find tiago_controller_configuration)/config/pal-hey5_joint_trajectory_controllers.yaml" />
