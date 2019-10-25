@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <launch>
   <!-- Copies calibration files to $ROS_HOME if missing -->
   <node pkg="camera_calibration_files" type="copy_calibration_files.sh" name="copy_calibration_files" output="screen">
