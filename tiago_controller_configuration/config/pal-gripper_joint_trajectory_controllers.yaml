@@ -8,6 +8,6 @@ gripper_controller:
     goal_time: 0.6
     stopped_velocity_tolerance: 5.0
     gripper_right_finger_joint:
-      goal: 0.02
+      goal: 0.05
     gripper_left_finger_joint:
-      goal: 0.02
+      goal: 0.05
