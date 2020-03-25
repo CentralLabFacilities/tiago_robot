@@ -2,6 +2,159 @@
 Changelog for package tiago_controller_configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+2.0.38 (2020-02-27)
+-------------------
+
+2.0.37 (2020-02-14)
+-------------------
+
+2.0.36 (2020-01-28)
+-------------------
+* Merge branch 'specifics_file' into 'erbium-devel'
+  added missing actuator specifics file
+  See merge request robots/tiago_robot!100
+* added missing actuator specifics file
+* Contributors: Sai Kishor Kothakota, Victor Lopez
+
+2.0.35 (2019-11-06)
+-------------------
+
+2.0.34 (2019-10-30)
+-------------------
+
+2.0.33 (2019-10-21)
+-------------------
+
+2.0.32 (2019-10-16)
+-------------------
+
+2.0.31 (2019-10-10)
+-------------------
+
+2.0.30 (2019-10-02)
+-------------------
+
+2.0.29 (2019-09-27)
+-------------------
+
+2.0.28 (2019-09-25)
+-------------------
+
+2.0.27 (2019-09-17)
+-------------------
+* added missing effort control parameters for arm joint 4
+* Contributors: Hilario Tome
+
+2.0.26 (2019-07-18)
+-------------------
+
+2.0.25 (2019-07-09)
+-------------------
+* Merge branch 'add-wsg-controller-dependency' into 'erbium-devel'
+  Add missing wsg controller config
+  See merge request robots/tiago_robot!89
+* Add missing wsg controller config
+* Contributors: Victor Lopez
+
+2.0.24 (2019-07-08)
+-------------------
+
+2.0.23 (2019-06-07)
+-------------------
+* Merge branch 'joint_traj_bug' into 'erbium-devel'
+  Fixes bjoin trajectory bug in torso controller
+  See merge request robots/tiago_robot!87
+* Fixes bjoin trajectory bug in torso controller
+* Contributors: Adria Roig, Victor Lopez
+
+2.0.22 (2019-05-21)
+-------------------
+
+2.0.21 (2019-05-13)
+-------------------
+
+2.0.20 (2019-05-09)
+-------------------
+* Merge branch 'no_wrist_gravity' into 'erbium-devel'
+  Add gravity no wrist for new wrist model
+  See merge request robots/tiago_robot!81
+* Update motor_torque_constant for the joints of the wrist
+* Add gravity no wrist for new wrist model
+* Contributors: Adria Roig, Victor Lopez
+
+2.0.19 (2019-05-02)
+-------------------
+
+2.0.18 (2019-04-23)
+-------------------
+
+2.0.17 (2019-04-12)
+-------------------
+
+2.0.16 (2019-04-12)
+-------------------
+
+2.0.15 (2019-04-05)
+-------------------
+* Merge branch 'wrist_current_control' into 'erbium-devel'
+  Add missing effort config files
+  See merge request robots/tiago_robot!70
+* Add missing effort config files
+* Contributors: Adria Roig, Hilario Tome
+
+2.0.14 (2019-04-03)
+-------------------
+
+2.0.13 (2019-03-28)
+-------------------
+
+2.0.12 (2019-03-26)
+-------------------
+* Merge branch 'incorrect_arm_constraints' into 'erbium-devel'
+  Fix wrong constraints on arm joint traj controllers
+  See merge request robots/tiago_robot!73
+* Fix wrong constraints on arm joint traj controllers
+* Contributors: Victor Lopez
+
+2.0.11 (2019-03-26)
+-------------------
+
+2.0.10 (2019-03-26)
+-------------------
+
+2.0.9 (2019-03-22)
+------------------
+
+2.0.8 (2019-03-15)
+------------------
+* Merge branch 'minor-fixes' into 'erbium-devel'
+  Minor fixes
+  See merge request robots/tiago_robot!72
+* Remove unuesd home_gripper script
+* Contributors: Victor Lopez
+
+2.0.7 (2019-03-14)
+------------------
+* Merge branch 'actuator_simulation' into 'erbium-devel'
+  added more paramater to actuators
+  See merge request robots/tiago_robot!71
+* removed empty spaces
+* fixed reduction ratio
+* added more paramater to actuators
+* Contributors: Hilario Tome
+
+2.0.6 (2019-03-12)
+------------------
+
+2.0.5 (2019-02-26)
+------------------
+
+2.0.4 (2019-02-08)
+------------------
+
+2.0.3 (2019-02-05)
+------------------
+
 2.0.2 (2018-12-21)
 ------------------
 

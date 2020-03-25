@@ -2,6 +2,195 @@
 Changelog for package tiago_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+2.0.38 (2020-02-27)
+-------------------
+
+2.0.37 (2020-02-14)
+-------------------
+* Merge branch 'wrist_model' into 'erbium-devel'
+  add wrist_model arg
+  See merge request robots/tiago_robot!101
+* add wrist_model arg
+* Contributors: Victor Lopez, YueErro
+
+2.0.36 (2020-01-28)
+-------------------
+
+2.0.35 (2019-11-06)
+-------------------
+
+2.0.34 (2019-10-30)
+-------------------
+
+2.0.33 (2019-10-21)
+-------------------
+* Merge branch 'fix-tf-prefix' into 'erbium-devel'
+  removed slash from twist mux out topic
+  See merge request robots/tiago_robot!97
+* removed slash from twist mux out topic
+* Contributors: Procópio Stein
+
+2.0.32 (2019-10-16)
+-------------------
+
+2.0.31 (2019-10-10)
+-------------------
+* Merge branch 'remove-sonar-cloud' into 'erbium-devel'
+  remove sonar cloud
+  See merge request robots/tiago_robot!94
+* removed sonar cloud
+* remove sonar cloud
+* Contributors: Procópio Stein
+
+2.0.30 (2019-10-02)
+-------------------
+* Merge branch 'fix-forced-value' into 'erbium-devel'
+  Fix hard coded value, should be default
+  See merge request robots/tiago_robot!93
+* Fix hard coded value, should be default
+* Contributors: Procópio Stein, Victor Lopez
+
+2.0.29 (2019-09-27)
+-------------------
+* changed speed limit dep
+* Contributors: Procópio Stein
+
+2.0.28 (2019-09-25)
+-------------------
+* Merge branch 'remove-speed-limit' into 'erbium-devel'
+  removed speed limit launch
+  See merge request robots/tiago_robot!92
+* removed speed limit launch
+* Contributors: Procópio Stein
+
+2.0.27 (2019-09-17)
+-------------------
+
+2.0.26 (2019-07-18)
+-------------------
+* Merge branch 'tiago_camera' into 'erbium-devel'
+  added tiago_camera launch file
+  See merge request robots/tiago_robot!90
+* added tiago_camera launch file
+* Contributors: Sai Kishor Kothakota, Victor Lopez
+
+2.0.25 (2019-07-09)
+-------------------
+
+2.0.24 (2019-07-08)
+-------------------
+
+2.0.23 (2019-06-07)
+-------------------
+
+2.0.22 (2019-05-21)
+-------------------
+
+2.0.21 (2019-05-13)
+-------------------
+* Merge branch 'endoscope_cam_fix' into 'erbium-devel'
+  changed the frame rate to fix libuvc invalid mode error
+  See merge request robots/tiago_robot!84
+* changed the frame rate to fix libuvc invalid mode error
+* Contributors: Sai Kishor Kothakota, Victor Lopez
+
+2.0.20 (2019-05-09)
+-------------------
+* Merge branch 'no_wrist_gravity' into 'erbium-devel'
+  Add gravity no wrist for new wrist model
+  See merge request robots/tiago_robot!81
+* Add gravity no wrist for new wrist model
+* Contributors: Adria Roig, Victor Lopez
+
+2.0.19 (2019-05-02)
+-------------------
+* Merge branch 'add_footprint_wsg' into 'erbium-devel'
+  Add Dynamic footprint dor WSG config
+  See merge request robots/tiago_robot!83
+* Add Dynamic footprint dor WSG config
+* Contributors: Victor Lopez, davidfernandez
+
+2.0.18 (2019-04-23)
+-------------------
+
+2.0.17 (2019-04-12)
+-------------------
+
+2.0.16 (2019-04-12)
+-------------------
+
+2.0.15 (2019-04-05)
+-------------------
+
+2.0.14 (2019-04-03)
+-------------------
+* Remove gripper usb cam, will be moved package
+* Contributors: Victor Lopez
+
+2.0.13 (2019-03-28)
+-------------------
+* Merge branch 'incrementer' into 'erbium-devel'
+  Add new incrementer in the bringup
+  See merge request robots/tiago_robot!79
+* Add new incrementer in the bringup
+* Contributors: Adria Roig, Victor Lopez
+
+2.0.12 (2019-03-26)
+-------------------
+* Merge branch 'fix-missing-param' into 'erbium-devel'
+  Forward correct arguments, and require them for dynamic_footprint
+  See merge request robots/tiago_robot!78
+* Forward correct arguments, and require them for dynamic_footprint
+* Contributors: Victor Lopez
+
+2.0.11 (2019-03-26)
+-------------------
+
+2.0.10 (2019-03-26)
+-------------------
+
+2.0.9 (2019-03-22)
+------------------
+* Merge branch 'iron_home_motion' into 'erbium-devel'
+  added home motion for TIAGo Iron
+  See merge request robots/tiago_robot!77
+* Regenerate motion and fix missing endline
+* added home motion for TIAGo Iron
+* Contributors: Sai Kishor Kothakota, Victor Lopez
+
+2.0.8 (2019-03-15)
+------------------
+* Merge branch 'teb_planner' into 'erbium-devel'
+  Add base and end-effector to dynamic footprint
+  See merge request robots/tiago_robot!74
+* Add base and end-effector to dynamic footprint
+* Merge branch 'minor-fixes' into 'erbium-devel'
+  Minor fixes
+  See merge request robots/tiago_robot!72
+* Fix missing ft data when using wsg gripper without ft sensor
+* Contributors: Victor Lopez, davidfernandez
+
+2.0.7 (2019-03-14)
+------------------
+
+2.0.6 (2019-03-12)
+------------------
+
+2.0.5 (2019-02-26)
+------------------
+
+2.0.4 (2019-02-08)
+------------------
+
+2.0.3 (2019-02-05)
+------------------
+* Merge branch 'fix-motion-names' into 'erbium-devel'
+  Fix motion names
+  See merge request robots/tiago_robot!66
+* Fix motion names
+* Remove usages of pass_all_args, not supported in kinetic yet
+* Contributors: Victor Lopez
+
 2.0.2 (2018-12-21)
 ------------------
 * Fix wrong generation of wsg without ft

@@ -2,6 +2,202 @@
 Changelog for package tiago_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+2.0.38 (2020-02-27)
+-------------------
+
+2.0.37 (2020-02-14)
+-------------------
+* Merge branch 'wrist_model' into 'erbium-devel'
+  add wrist_model arg
+  See merge request robots/tiago_robot!101
+* add wrist_model arg
+* Contributors: Victor Lopez, YueErro
+
+2.0.36 (2020-01-28)
+-------------------
+
+2.0.35 (2019-11-06)
+-------------------
+* Merge branch 'arm_offset_fix' into 'erbium-devel'
+  parse arm joint offsets through the macro
+  See merge request robots/tiago_robot!98
+* parse arm joint offsets through the macro
+* Contributors: Sai Kishor Kothakota, Victor Lopez
+
+2.0.34 (2019-10-30)
+-------------------
+* Merge branch 'ivo_robot' into 'erbium-devel'
+  parameterize the parsed offsets w.r.t to the name
+  See merge request robots/tiago_robot!96
+* parameterize the parsed offsets w.r.t to the name
+* Contributors: Jordan Palacios, Sai Kishor Kothakota
+
+2.0.33 (2019-10-21)
+-------------------
+
+2.0.32 (2019-10-16)
+-------------------
+* Merge branch 'fix-gazebo-pose-frame' into 'erbium-devel'
+  fixed frame used in ground truth pose
+  See merge request robots/tiago_robot!95
+* fixed frame used in ground truth pose
+* Contributors: Procópio Stein
+
+2.0.31 (2019-10-10)
+-------------------
+
+2.0.30 (2019-10-02)
+-------------------
+
+2.0.29 (2019-09-27)
+-------------------
+
+2.0.28 (2019-09-25)
+-------------------
+
+2.0.27 (2019-09-17)
+-------------------
+
+2.0.26 (2019-07-18)
+-------------------
+
+2.0.25 (2019-07-09)
+-------------------
+
+2.0.24 (2019-07-08)
+-------------------
+* Merge branch 'new-dual-arm-2-limit' into 'erbium-devel'
+  Fix dual arm 2 lower limit
+  See merge request robots/tiago_robot!88
+* Fix dual arm 2 lower limit
+* Contributors: Victor Lopez
+
+2.0.23 (2019-06-07)
+-------------------
+
+2.0.22 (2019-05-21)
+-------------------
+* Merge branch 'tiago-dual-arm-1-2' into 'erbium-devel'
+  Tiago dual arm 1 2
+  See merge request robots/tiago_robot!85
+* Fix joint limits for tiago 2 arm
+* Fix transmission duplicated name for tiago 2 arm
+* Modify arm 1, 2 and 3 for TIAGo Dual
+* Merge branch 'melodic_fixes' into 'erbium-devel'
+  added boolean false to the variation lists
+  See merge request robots/tiago_robot!86
+* added boolean false to the variation lists
+* Add default parameters to show.launch for easier testing
+* Contributors: Sai Kishor Kothakota, Victor Lopez
+
+2.0.21 (2019-05-13)
+-------------------
+
+2.0.20 (2019-05-09)
+-------------------
+
+2.0.19 (2019-05-02)
+-------------------
+
+2.0.18 (2019-04-23)
+-------------------
+* Merge branch 'reduce-padding' into 'erbium-devel'
+  Reduce padding for tiago arm
+  See merge request robots/tiago_robot!82
+* Reduce padding for tiago arm
+* Contributors: Victor Lopez
+
+2.0.17 (2019-04-12)
+-------------------
+* Merge branch 'tiago-dual' into 'erbium-devel'
+  Fixes for tiago dual
+  See merge request robots/tiago_robot!80
+* Corrected com positions and some inertias
+* Merge remote-tracking branch 'origin/urdf_arm_review' into tiago-dual
+* Fix changed orientation of original tiago arm
+* Finish dual arm urdf
+* Almost finished dual arms
+* Fixes for tiago dual
+* fix max vel and adjust max efforts
+* Fixed torque and speed limits for arm
+* review link 4-5-6-7
+* Contributors: Jordi Pages, Luca, Victor Lopez
+
+2.0.16 (2019-04-12)
+-------------------
+
+2.0.15 (2019-04-05)
+-------------------
+* Merge branch 'wrist_current_control' into 'erbium-devel'
+  Add missing effort config files
+  See merge request robots/tiago_robot!70
+* Add missing effort config files
+* Contributors: Adria Roig, Hilario Tome
+
+2.0.14 (2019-04-03)
+-------------------
+
+2.0.13 (2019-03-28)
+-------------------
+
+2.0.12 (2019-03-26)
+-------------------
+
+2.0.11 (2019-03-26)
+-------------------
+* Fix wrong include, could be duplicated
+* Contributors: Victor Lopez
+
+2.0.10 (2019-03-26)
+-------------------
+* Merge branch 'move-end-effector-xacro' into 'erbium-devel'
+  Move end_effector xacro code for reusing
+  See merge request robots/tiago_robot!75
+* Fix xacro warnings
+* Parametrize arm origin
+* Move end_effector xacro code for reusing
+* Contributors: Victor Lopez
+
+2.0.9 (2019-03-22)
+------------------
+* Merge branch 'fix_xacro_warning2' into 'erbium-devel'
+  Fix xacro warning2
+  See merge request robots/tiago_robot!45
+* fix xacro deprecation warning
+* Contributors: Jeremie Deray, Procópio Stein
+
+2.0.8 (2019-03-15)
+------------------
+
+2.0.7 (2019-03-14)
+------------------
+
+2.0.6 (2019-03-12)
+------------------
+* Add padding and extend blacklist
+* Contributors: Victor Lopez
+
+2.0.5 (2019-02-26)
+------------------
+* Merge branch 'multi_simulation' into 'erbium-devel'
+  Fix multitiago simulation
+  See merge request robots/tiago_robot!69
+* Fix multitiago simulation
+* Contributors: Victor Lopez, davidfernandez
+
+2.0.4 (2019-02-08)
+------------------
+* Merge branch 'camera_calib' into 'erbium-devel'
+  added extrinsic camera calibration file modifications
+  See merge request robots/tiago_robot!68
+* added extrinsic camera calibration file changes
+* Contributors: Jordi Pages, Sai Kishor Kothakota
+
+2.0.3 (2019-02-05)
+------------------
+* Remove usages of pass_all_args, not supported in kinetic yet
+* Contributors: Victor Lopez
+
 2.0.2 (2018-12-21)
 ------------------
 
