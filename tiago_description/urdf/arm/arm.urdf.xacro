@@ -1,17 +1,21 @@
 <?xml version="1.0"?>
 <!--
 
-  Copyright (c) 2014-2015, PAL Robotics, S.L.
-  All rights reserved.
-
-  This work is licensed under the Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License.
-  To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-nd/3.0/ or send a letter to
-  Creative Commons, 444 Castro Street, Suite 900, Mountain View, California, 94041, USA.
+  Copyright (c) 2021 PAL Robotics S.L. All rights reserved.
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+      http://www.apache.org/licenses/LICENSE-2.0
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
 -->
+
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
 
   <!--File includes-->
-  <xacro:include filename="$(find tiago_description)/urdf/deg_to_rad.xacro" />
   <xacro:include filename="$(find tiago_description)/urdf/arm/wrist.urdf.xacro" />
   <xacro:include filename="$(find tiago_description)/urdf/arm/arm.transmission.xacro" />
 
@@ -26,12 +30,12 @@
   <xacro:property name="arm_2_max_effort"   value="43.0" />
   <xacro:property name="arm_3_max_effort"   value="26" />
   <xacro:property name="arm_4_max_effort"   value="26" />
-  <xacro:property name="arm_eps"            value="0.07" />
 
 
   <!-- reflect: Set to 1 for a right arm, or to -1 for a left arm-->
   <!-- tiago_dual: Set to 1 for tiago dual, -1 for original tiago, changes joints 1 and 2 -->
-  <xacro:macro name="tiago_arm" params="name parent wrist_6_range reflect tiago_dual *origin arm_1_offset arm_2_offset arm_3_offset arm_4_offset arm_5_offset arm_6_offset arm_7_offset">
+  <xacro:macro name="tiago_arm" params="name parent wrist_model has_ft_sensor reflect tiago_dual *origin arm_1_offset arm_2_offset arm_3_offset arm_4_offset arm_5_offset arm_6_offset arm_7_offset no_safety_eps:=False">
+   <xacro:property name="arm_eps"       value="${0.00 if no_safety_eps else 0.07}"/>
 
     <!--************************-->
     <!--        SHOULDER        -->
@@ -122,7 +126,7 @@
     <link name="${name}_3_link">
       <inertial>
         <origin xyz="0.007418 -0.004361 ${reflect * -0.134194}" rpy="0.00000 0.00000 0.00000"/>
-        <mass value="2.343502"/>
+        <mass value="1.8"/>
         <inertia ixx="0.019541" ixy="${1 * -0.000105}" ixz="-0.001717"
           iyy="0.019936" iyz="${reflect * 0.000852}"
                  izz="0.002864"/>
@@ -164,7 +168,7 @@
     <!--************************-->
     <link name="${name}_4_link">
       <inertial>
-        <origin xyz="${reflect * -0.095658} ${reflect * 0.014666} 0.018133" rpy="0.00000 0.00000 0.00000"/>
+        <origin xyz="${reflect * -0.095658} ${reflect * 0.014666} ${reflect * 0.018133}" rpy="0.00000 0.00000 0.00000"/>
         <mass value="1.432697"/>
         <inertia ixx="0.002040" ixy="${reflect * 0.000725}" ixz="${-reflect * 0.001150}"
                  iyy="0.008424" iyz="-0.000204"
@@ -238,7 +242,8 @@
     <!--************************-->
     <!--        WRIST           -->
     <!--************************-->
-   <xacro:wrist name="${name}" parent="${name}_4_link" reflect="${reflect}" wrist_6_range="${wrist_6_range}" arm_5_offset="${arm_5_offset}" arm_6_offset="${arm_6_offset}" arm_7_offset="${arm_7_offset}"/>
+
+   <xacro:wrist name="${name}" parent="${name}_4_link" reflect="${reflect}" wrist_model="${wrist_model}" has_ft_sensor="${has_ft_sensor}" arm_5_offset="${arm_5_offset}" arm_6_offset="${arm_6_offset}" arm_7_offset="${arm_7_offset}"  no_safety_eps="${no_safety_eps}"/>
 
     <!--***********************-->
     <!--        TOOL           -->
@@ -246,7 +251,7 @@
     <link name="${name}_tool_link">
       <inertial>
         <mass value="0.1" />
-        <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+        <inertia ixx="8.33E-07" ixy="0.0" ixz="0.0" iyy="8.33E-07" iyz="0.0" izz="1.25E-06" />
       </inertial>
       <visual>
         <origin xyz="0.001 0 0" rpy="0 ${90.0 * deg_to_rad} 0" />
@@ -263,10 +268,16 @@
       </collision>
     </link>
 
+    <xacro:if value="${wrist_model == 'wrist-2010'}">
+      <xacro:property name="tool_link_z_offset"           value="0.046"/>
+    </xacro:if>
+    <xacro:if value="${wrist_model == 'wrist-2017'}">
+     <xacro:property name="tool_link_z_offset"           value="${ 0.046 if has_ft_sensor else 0.0573 }"/>
+    </xacro:if>
     <joint name="${name}_tool_joint" type="fixed">
       <parent link="${name}_7_link" />
       <child link="${name}_tool_link" />
-      <origin xyz="0 0 ${reflect*0.046}" rpy="${90.0 * deg_to_rad} ${reflect * -90.0 * deg_to_rad} ${180 * deg_to_rad}" />
+        <origin xyz="0 0 ${reflect * tool_link_z_offset}" rpy="${90.0 * deg_to_rad} ${reflect * -90.0 * deg_to_rad} ${180 * deg_to_rad}" />
     </joint>
 
 

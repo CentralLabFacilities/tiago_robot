@@ -1,17 +1,21 @@
 <?xml version="1.0" ?>
 <!--
 
-  Copyright (c) 2015, PAL Robotics, S.L.
-  All rights reserved.
-
-  This work is licensed under the Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License.
-  To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-nd/3.0/ or send a letter to
-  Creative Commons, 444 Castro Street, Suite 900, Mountain View, California, 94041, USA.
+  Copyright (c) 2021 PAL Robotics S.L. All rights reserved.
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+      http://www.apache.org/licenses/LICENSE-2.0
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
 -->
+
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
 
   <!--File includes-->
-  <xacro:include filename="$(find tiago_description)/urdf/deg_to_rad.xacro" />
   <xacro:include filename="$(find tiago_description)/urdf/torso/torso.transmission.xacro" />
 
   <!--Constant parameters-->
@@ -39,13 +43,13 @@
     <collision>
       <origin rpy="0 0 0" xyz="0.085 0.0 0.02" />
       <geometry>
-        <box size="0.4 0.25 0.04"/>
+        <box size="0.4 0.265 0.05"/>
       </geometry>
     </collision>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0.05" />
       <geometry>
-        <box size="0.25 0.25 0.1"/>
+        <box size="0.255 0.255 0.117"/>
       </geometry>
     </collision>
   </link>
@@ -76,7 +80,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0.275" />
       <geometry>
-        <box size="0.23 0.23 0.55"/>
+        <box size="0.23 0.253 0.45"/>
       </geometry>
       <material name="DarkGrey"/>
     </collision>
@@ -131,23 +135,30 @@
     </collision>
   </link>
 
-  <joint name="${name}_lift_joint" type="prismatic">
-    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.597" />
-    <parent link="${name}_fixed_link" />
-    <child link="${name}_lift_link" />
-    <axis xyz="0 0 1" />
-    <limit effort="2000" lower="0" upper="0.35" velocity="${torso_max_vel}" />
-    <calibration rising="0.0" />
-    <dynamics damping="1000" />
-
-    <safety_controller k_position="20"
-                         k_velocity="20"
-                         soft_lower_limit="0.0"
-                         soft_upper_limit="0.35" />
-
-  </joint>
-
-  <xacro:torso_simple_transmission name="torso_lift" reduction="1.0"/>
+  <xacro:if value="$(arg fixed_torso)">
+    <joint name="${name}_lift_joint" type="fixed">
+      <!-- Torso fixed height is set to half it's range -->
+      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.772" />
+      <parent link="${name}_fixed_link" />
+      <child link="${name}_lift_link" />
+    </joint>
+  </xacro:if>
+  <xacro:unless value="$(arg fixed_torso)">
+    <joint name="${name}_lift_joint" type="prismatic">
+      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.597" />
+      <parent link="${name}_fixed_link" />
+      <child link="${name}_lift_link" />
+      <axis xyz="0 0 1" />
+      <limit effort="2000" lower="0" upper="0.35" velocity="${torso_max_vel}" />
+      <calibration rising="0.0" />
+      <dynamics damping="1000" />
+      <safety_controller k_position="20"
+      k_velocity="20"
+      soft_lower_limit="0.0"
+      soft_upper_limit="0.35" />
+    </joint>
+    <xacro:torso_simple_transmission name="torso_lift" reduction="1.0" />
+  </xacro:unless>
 
  </xacro:macro>
 
