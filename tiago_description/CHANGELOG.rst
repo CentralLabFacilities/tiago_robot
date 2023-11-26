@@ -2,6 +2,432 @@
 Changelog for package tiago_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+2.3.17 (2023-11-20)
+-------------------
+
+2.3.16 (2023-11-08)
+-------------------
+
+2.3.15 (2023-10-23)
+-------------------
+* Merge branch 'feat/use_urdf_utils' into 'erbium-devel'
+  Use urdf_utils
+  See merge request robots/tiago_robot!230
+* Use urdf_utils
+* Contributors: Jordan Palacios, thomaspeyrucain
+
+2.3.14 (2023-10-11)
+-------------------
+* Merge branch 'change_license_to_apache' into 'erbium-devel'
+  change public license to Apache License 2.0
+  See merge request robots/tiago_robot!229
+* change public license to Apache License 2.0
+* Merge branch 'fixed_torso_argument' into 'erbium-devel'
+  Fixed torso argument
+  See merge request robots/tiago_robot!225
+* updated the torso to be at half it's range when fixed
+* Manual formating
+* Added if condition in torso xacro related to fixed_torso parameter
+* Added fixed_torso parameter to main xacro
+* Merge branch 'davidterkuile-erbium-devel-patch-41052' into 'erbium-devel'
+  Update deprecated joint state publisher
+  See merge request robots/tiago_robot!224
+* Update deprecated joint state publisher
+* Contributors: Jordan Palacios, Sai Kishor Kothakota, Victor Lutz, davidterkuile
+
+2.3.13 (2023-08-09)
+-------------------
+
+2.3.12 (2023-06-12)
+-------------------
+* Merge branch 'control-period-reduced' into 'erbium-devel'
+  Gazebo control period reduced from 0.001 to 0.01
+  See merge request robots/tiago_robot!200
+* control period reduced from 0.001 to 0.01
+* Contributors: Sai Kishor Kothakota, ileniaperrella
+
+2.3.11 (2023-04-18)
+-------------------
+
+2.3.10 (2023-03-13)
+-------------------
+* Merge branch 'feat/ydlidar' into 'erbium-devel'
+  added support to ydlidar
+  See merge request robots/tiago_robot!183
+* added support to ydlidar
+* Merge branch 'grasping-frames' into 'erbium-devel'
+  Grasping frames macro
+  See merge request robots/tiago_robot!188
+* Macro to create the grasping frames of the grippers
+* Contributors: antoniobrandi, narcismiguel, sergiacosta
+
+2.3.9 (2022-12-13)
+------------------
+
+2.3.8 (2022-10-24)
+------------------
+
+2.3.7 (2022-08-10)
+------------------
+* Merge branch 'fix_torso_collision' into 'erbium-devel'
+  Fix collision boxes for the torso
+  See merge request robots/tiago_robot!156
+* Fix collision boxes for the torso
+* Contributors: saikishor, thomaspeyrucain
+
+2.3.6 (2022-08-04)
+------------------
+
+2.3.5 (2022-07-26)
+------------------
+
+2.3.4 (2022-07-21)
+------------------
+
+2.3.3 (2022-07-19)
+------------------
+
+2.3.2 (2022-05-17)
+------------------
+
+2.3.1 (2022-05-16)
+------------------
+
+2.3.0 (2022-05-03)
+------------------
+
+2.2.15 (2022-05-03)
+-------------------
+* Merge branch 'no-end-effector-bugfix' into 'erbium-devel'
+  No end effector bugfix
+  See merge request robots/tiago_robot!149
+* Merge branch 'no-end-effector-bugfix' of gitlab:robots/tiago_robot into no-end-effector-bugfix
+* Apply 5 suggestion(s) to 4 file(s)
+* remove redundant spaces
+* remove redundant spaces
+* end effector back to hey-5
+* prevent ft sensor to load when no arm is attached
+* add epick end-effector
+* add no-ee to urdf
+* update motions config file
+* fix faulty if statement in urdf
+* Update eval function, generate scripts
+* add no-ee to urdf
+* edit motions config
+* update motions config file
+* fix faulty if statement in urdf
+* made some changes
+* Update eval function, generate scripts
+* prevent ft sensor to load when no arm is attached
+* add epick end-effector
+* add no-ee to urdf
+* update motions config file
+* fix faulty if statement in urdf
+* Update eval function, generate scripts
+* add no-ee to urdf
+* edit motions config
+* update motions config file
+* fix faulty if statement in urdf
+* made some changes
+* Update eval function, generate scripts
+* add epick end-effector
+* add no-ee to urdf
+* edit motions config
+* update motions config file
+* fix faulty if statement in urdf
+* made some changes
+* Update eval function, generate scripts
+* add no-ee to urdf
+* edit motions config
+* update motions config file
+* fix faulty if statement in urdf
+* made some changes
+* Update eval function, generate scripts
+* Contributors: David ter Kuile, saikishor
+
+2.2.14 (2022-04-20)
+-------------------
+* Fix materials
+* Contributors: Giang Nguyen
+
+2.2.13 (2022-03-23)
+-------------------
+* Merge branch 'fix_home_robotiq_2f_140' into 'erbium-devel'
+  Fix home position for robotiq-2f-140 + fix Reach max out of range motion + add effort_controller
+  See merge request robots/tiago_robot!148
+* Add pal_robotiq_epick_description dependency on tiago_description package
+* Contributors: saikishor, thomaspeyrucain
+
+2.2.12 (2022-03-18)
+-------------------
+* Added the robotiq epick to the rostests
+* Contributors: Sai Kishor Kothakota
+
+2.2.11 (2022-03-18)
+-------------------
+* Merge branch 'add_robotiq_epick_gripper' into 'erbium-devel'
+  Add link to epick urdf
+  See merge request robots/tiago_robot!145
+* Match the code with the other robotiq gripper
+* add prefix parameter
+* Add link to epick urdf
+* Contributors: saikishor, thomaspeyrucain
+
+2.2.10 (2022-02-22)
+-------------------
+
+2.2.9 (2022-01-19)
+------------------
+
+2.2.8 (2021-12-22)
+------------------
+
+2.2.7 (2021-11-25)
+------------------
+* Merge branch 'omnibase-gravity-fix' into 'erbium-devel'
+  changing ros_planar_move gazebo plugin with ros_force_based_move in order to preserve gravity
+  See merge request robots/tiago_robot!143
+* Moved force_based_move AFTER ros_control
+* Changed the order of the plugin in order to make the wheel rotating correctly
+* Add dependency to the hector gazebo plugin for the omni base simulation
+* Removing the needs for a duplicated gazebo.urdf file
+* Removed dependencies
+* changing ros_planar_move gazebo plugin with ros_force_based_move in order to preserve gravity
+* Contributors: antoniobrandi, saikishor
+
+2.2.6 (2021-11-22)
+------------------
+
+2.2.5 (2021-11-19)
+------------------
+* Merge branch 'fix_arm_1_collision_mesh' into 'erbium-devel'
+  fix the arm_1_link collision mesh which is causing troubles in capsule_decomposition generation
+  See merge request robots/tiago_robot!141
+* fix the arm_1_link collision mesh which is causing troubles in capsule_decomposition generation
+* Merge branch 'conditional_dependencies' into 'erbium-devel'
+  Conditional dependencies
+  See merge request robots/tiago_robot!140
+* added PAL_DISTRO conditioning for PAL dependencies
+* change to package version 3
+* Contributors: Sai Kishor Kothakota, victor
+
+2.2.4 (2021-11-10)
+------------------
+
+2.2.3 (2021-11-10)
+------------------
+
+2.2.2 (2021-11-09)
+------------------
+
+2.2.1 (2021-11-09)
+------------------
+
+2.2.0 (2021-11-03)
+------------------
+* Merge branch 'omni_base_robot' into 'erbium-devel'
+  Omni base robot
+  See merge request robots/tiago_robot!137
+* preparing configuration for a tiago with omni base
+* Creating tiago with omni_base robot
+* Contributors: antoniobrandi, saikishor
+
+2.1.5 (2021-09-22)
+------------------
+
+2.1.4 (2021-08-31)
+------------------
+
+2.1.3 (2021-08-06)
+------------------
+
+2.1.2 (2021-07-16)
+------------------
+* Merge branch 'fix_inertia_matrices' into 'erbium-devel'
+  fix the inertia matrices of arm_tool_link and of force torque sensor
+  See merge request robots/tiago_robot!129
+* fix the inertia matrices of arm_tool_link and of force torque sensor
+* Merge branch 'update-apache-licence-2021' into 'erbium-devel'
+  Updating apache License 2021
+  See merge request robots/tiago_robot!128
+* Updating apache License
+* Contributors: Sai Kishor Kothakota, ThomasPeyrucain, saikishor, victor
+
+2.1.1 (2021-06-01)
+------------------
+* Merge branch 'parametrize-robot-description' into 'erbium-devel'
+  Parametrize robot_description param name
+  See merge request robots/tiago_robot!127
+* Parametrize robot_description param name
+* Contributors: Victor Lopez, victor
+
+2.1.0 (2021-05-06)
+------------------
+* Merge branch 'robotiq_gripper' into 'erbium-devel'
+  Robotiq gripper
+  See merge request robots/tiago_robot!125
+* add robotiq dependencies and robotiq grippers to the tests
+* update the robotiq end effector naming
+* integrate the new robotiq-85 and robotiq-140 grippers
+* Contributors: Sai Kishor Kothakota, saikishor
+
+2.0.58 (2021-04-09)
+-------------------
+
+2.0.57 (2021-03-19)
+-------------------
+* Merge branch 'custom-end-effector-dual' into 'erbium-devel'
+  Custom end effector dual
+  See merge request robots/tiago_robot!123
+* fix: logic loading custom ee urdf from tiago_robot
+* fix: load custom urdfs
+* fix: treat string as binary always entering to dual if
+* fix: duplicating right ee causing error link
+* fix: xacro negation
+* Contributors: daniellopez, victor
+
+2.0.56 (2021-03-01)
+-------------------
+* Merge branch 'fix_left_arm_tiago_dual_com' into 'erbium-devel'
+  Add reflect for 4th link CoM
+  See merge request robots/tiago_robot!122
+* Add reflect for 4th link CoM
+* Contributors: Luca Marchionni, victor
+
+2.0.55 (2021-01-15)
+-------------------
+* Merge branch 'gravity_compensation_fix' into 'erbium-devel'
+  Update arm_3_link weight for gravity compensation
+  See merge request robots/tiago_robot!120
+* Update arm_3_link weight for gravity compensation
+* Contributors: Adria Roig, victor
+
+2.0.54 (2020-09-08)
+-------------------
+* Merge branch 'no_safety_eps_head' into 'erbium-devel'
+  added no safety eps to head
+  See merge request robots/tiago_robot!119
+* fix the no_safety_epc head macro issue
+* added no safety eps to head
+* Merge branch 'new-endoscopic-dual' of gitlab:robots/tiago_robot into new-endoscopic-dual
+* Contributors: Sai Kishor Kothakota, daniellopez, victor
+
+2.0.53 (2020-07-30)
+-------------------
+
+2.0.52 (2020-07-27)
+-------------------
+
+2.0.51 (2020-07-15)
+-------------------
+* Merge branch 'fix-head-calibration' into 'erbium-devel'
+  add eps to head_motor_2 head.urdf.xacro
+  See merge request robots/tiago_robot!116
+* add eps to head_motor_2 head.urdf.xacro
+* Contributors: daniellopez, victor
+
+2.0.50 (2020-07-10)
+-------------------
+* Merge branch 'add-no-safety-eps' into 'erbium-devel'
+  Add the option of disabling arm_safety_eps via launch file
+  See merge request robots/tiago_robot!115
+* Fix default no_safety_eps value
+* Add the option of disabling arm_safety_eps via launch file
+* Contributors: Victor Lopez, victor
+
+2.0.49 (2020-07-01)
+-------------------
+* Merge branch 'add-master-calibration' into 'erbium-devel'
+  Add master calibration compatibility for eye hand and extrinsic
+  See merge request robots/tiago_robot!114
+* Proper pal_camera_calibration_extrinsics path
+* Add master calibration compatibility for eye hand and extrinsic
+* Contributors: Victor Lopez, victor
+
+2.0.48 (2020-06-10)
+-------------------
+* Merge branch 'gravity-compensation' into 'erbium-devel'
+  change values to have a better gravity compensation. Not optimum result for all tiagos found
+  See merge request robots/tiago_robot!113
+* change values to have a better gravity compensation. Not optimum result for all tiagos found
+* Contributors: daniellopez, victor
+
+2.0.47 (2020-05-15)
+-------------------
+* Merge branch 'wrist-2017' into 'erbium-devel'
+  adjust mass of wrist-2017
+  See merge request robots/tiago_robot!112
+* adjust mass of wrist-2017
+* Contributors: YueErro, victor
+
+2.0.46 (2020-05-13)
+-------------------
+* Merge branch 'wrist-2019' into 'erbium-devel'
+  Use mass and inertia values based on the wrist type
+  See merge request robots/tiago_robot!111
+* Use mass and inertia values based on the wrist type
+* Contributors: Sai Kishor Kothakota, victor
+
+2.0.45 (2020-05-12)
+-------------------
+* Merge branch 'remove_default_parsed_package' into 'erbium-devel'
+  remove default description_calibration_package argument in head
+  See merge request robots/tiago_robot!110
+* Merge branch 'no_arm' into 'erbium-devel'
+  fix wrong_wrist_model condition
+  See merge request robots/tiago_robot!107
+* fix wrong_wrist_model condition
+* remove default description_calibration_package argument in head
+* Contributors: saikishor, victor, yueerro
+
+2.0.44 (2020-05-12)
+-------------------
+* Merge branch 'description-calibration-fixes' into 'erbium-devel'
+  Description calibration fixes
+  See merge request robots/tiago_robot!109
+* parse package name instead of individual elements and load files respective to package
+* pass the camera origin as an argument to head
+* Contributors: Sai Kishor Kothakota, victor
+
+2.0.43 (2020-05-08)
+-------------------
+* Fix mesh orientation
+* Merge branch 'fix-orbbec-astra' into 'erbium-devel'
+  Fix frames for orbbec astra
+  See merge request robots/tiago_robot!108
+* depth frame for orbbec is referenced on the rgb frame
+* Fix y orientation error
+* Fix frames for orbbec astra
+* Remove unused properties
+* Contributors: Victor Lopez, victor
+
+2.0.42 (2020-05-07)
+-------------------
+* Use different meshes for wrist 2017
+* Contributors: Victor Lopez
+
+2.0.41 (2020-05-07)
+-------------------
+* Adjust end_effector-wrist distance without FT sensor
+* Contributors: Victor Lopez
+
+2.0.40 (2020-05-06)
+-------------------
+* Merge branch 'fix-tiago-wrist-offset' into 'erbium-devel'
+  Change wrist tool link position with wrist 2017
+  See merge request robots/tiago_robot!106
+* Change wrist tool link position with wrist 2017
+* Contributors: Victor Lopez, victor
+
+2.0.39 (2020-04-21)
+-------------------
+* Merge branch 'custom-ee' into 'erbium-devel'
+  Allow using custom end-effector
+  See merge request robots/tiago_robot!102
+* Add test for custom End-Effector
+* Allow using custom end-effector
+* Contributors: davidfernandez, victor
+
 2.0.38 (2020-02-27)
 -------------------
 

@@ -1,18 +1,4 @@
 teleop:
-  move:
-    type: topic
-    message_type: geometry_msgs/Twist
-    topic_name: cmd_vel
-    axis_mappings:
-      -
-        axis: 1
-        target: linear.x
-        scale: 1.0
-      -
-        axis: 2
-        target: angular.z
-        scale: 1.0
-
   joy_priority:
     type: action
     action_name: joy_priority_action
@@ -102,7 +88,6 @@ teleop:
       skip_planning: True
     buttons: [5]
 @[end if]@
-
 @[if end_effector == "pal-gripper"]@
   close_gripper:
     type: action
@@ -118,7 +103,6 @@ teleop:
       increment_by: [0.01, 0.01]
     buttons: [5] # R1
 @[end if]@
-
 @[if end_effector == "schunk-wsg"]@
   close_gripper:
     type: action
@@ -133,4 +117,40 @@ teleop:
     action_goal:
       increment_by: [0.01]
     buttons: [5] # R1
+@[end if]@
+@[if end_effector in ["robotiq-2f-85", "robotiq-2f-140"]]@
+  close_gripper:
+    type: action
+    action_name: /gripper_controller/increment
+    action_goal:
+      increment_by: [0.1]
+    buttons: [7] # R2
+
+  open_gripper:
+    type: action
+    action_name: /gripper_controller/increment
+    action_goal:
+      increment_by: [-0.1]
+    buttons: [5] # R1
+@[end if]@
+@[if end_effector == "robotiq-epick"]@
+  close_gripper:
+    type: topic
+    message_type: std_msgs/Float64
+    topic_name: /gripper_controller/command
+    message_value:
+      -
+        target: data
+        value: 1.0
+    deadman_buttons: [7] # R2
+
+  open_gripper:
+    type: topic
+    message_type: std_msgs/Float64
+    topic_name: /gripper_controller/command
+    message_value:
+      -
+        target: data
+        value: 0.0
+    deadman_buttons: [5] # R1
 @[end if]@

@@ -1,26 +1,29 @@
 <?xml version="1.0"?>
 <!--
 
-  Copyright (c) 2015, PAL Robotics, S.L.
-  All rights reserved.
-
-  This work is licensed under the Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License.
-  To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-nd/3.0/ or send a letter to
-  Creative Commons, 444 Castro Street, Suite 900, Mountain View, California, 94041, USA.
+  Copyright (c) 2021 PAL Robotics S.L. All rights reserved.
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+      http://www.apache.org/licenses/LICENSE-2.0
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
 -->
+
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
 
   <!--File includes-->
-  <xacro:include filename="$(find tiago_description)/urdf/deg_to_rad.xacro" />
   <xacro:include filename="$(find tiago_description)/urdf/head/head.transmission.xacro" />
   <xacro:include filename="$(find tiago_description)/urdf/sensors/xtion_pro_live.urdf.xacro" />
-  <xacro:include filename="$(find tiago_description_calibration)/urdf/calibration/calibration_constants.urdf.xacro" />
+  <xacro:include filename="$(find tiago_description)/urdf/sensors/orbbec_astra.urdf.xacro" />
 
   <!--Constant parameters-->
   <xacro:property name="head_friction" value="1.0" />
   <xacro:property name="head_damping"  value="0.5" />
   <xacro:property name="head_max_vel"  value="3.0" />
-  <xacro:property name="head_eps"      value="0.07" />
   <xacro:property name="head_1_lower_limit" value="-75"/>
   <xacro:property name="head_1_upper_limit" value="75"/>
   <xacro:property name="head_2_lower_limit" value="-60"/>
@@ -121,21 +124,35 @@
       <safety_controller k_position="20"
                          k_velocity="20"
                          soft_lower_limit="${head_2_lower_limit * deg_to_rad + head_eps}"
-                         soft_upper_limit="${head_2_upper_limit * deg_to_rad}" />
+                         soft_upper_limit="${head_2_upper_limit * deg_to_rad - head_eps}" />
     </joint>
 
     <xacro:head_transmission name="${name}" reduction="1" offset_value="${head_2_joint_offset}"/>
 
   </xacro:macro>
 
-  <xacro:macro name="head" params="name parent camera_model">
+  <xacro:macro name="head" params="name parent camera_model description_calibration_dir extrinsic_calibration_dir no_safety_eps:=False">
+    <xacro:property name="head_eps"      value="${0.00 if no_safety_eps else 0.07}" />
+
+    <!-- includes -->
+    <xacro:include filename="$(arg description_calibration_dir)/calibration_constants.urdf.xacro" />
+
     <xacro:head_1 name="${name}_1" parent="${parent}" />
     <xacro:head_2 name="${name}_2" parent="${name}_1_link"/>
-    <xacro:xtion_pro_live name="xtion" parent="${name}_2" camera_model="${camera_model}">
-      <origin xyz="${camera_position_x} ${camera_position_y} ${camera_position_z}" rpy="${camera_orientation_r} ${camera_orientation_p} ${camera_orientation_y}" />
-      <!-- optical origin -->
-      <origin xyz="0 0 0" rpy="${-90 * deg_to_rad} ${0 * deg_to_rad} ${-90 * deg_to_rad}" />
-    </xacro:xtion_pro_live>
+    <xacro:if value="${camera_model == 'asus-xtion'}">
+      <xacro:xtion_pro_live name="xtion" parent="${name}_2" camera_model="${camera_model}" extrinsic_calibration_dir="${extrinsic_calibration_dir}">
+        <origin xyz="${camera_position_x} ${camera_position_y} ${camera_position_z}" rpy="${camera_orientation_r} ${camera_orientation_p} ${camera_orientation_y}" />
+        <!-- optical origin -->
+        <origin xyz="0 0 0" rpy="${-90 * deg_to_rad} ${0 * deg_to_rad} ${-90 * deg_to_rad}" />
+      </xacro:xtion_pro_live>
+    </xacro:if>
+    <xacro:if value="${camera_model in ['orbbec-astra', 'orbbec-astra-pro']}">
+      <xacro:orbbec_astra name="xtion" parent="${name}_2" camera_model="${camera_model}" extrinsic_calibration_dir="${extrinsic_calibration_dir}">
+        <origin xyz="${camera_position_x} ${camera_position_y} ${camera_position_z}" rpy="${camera_orientation_r} ${camera_orientation_p} ${camera_orientation_y}" />
+        <!-- optical origin -->
+        <origin xyz="0 0 0" rpy="${-90 * deg_to_rad} ${0 * deg_to_rad} ${-90 * deg_to_rad}" />
+      </xacro:orbbec_astra>
+    </xacro:if>
   </xacro:macro>
 
 </robot>

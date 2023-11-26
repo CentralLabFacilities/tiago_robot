@@ -12,7 +12,7 @@ extension = os.path.splitext(no_em_extension_path)[1]
 
 for arm in [True, False]:
     if arm:
-        end_effectors = ["pal-hey5", "pal-gripper", "schunk-wsg"]
+        end_effectors = ["pal-hey5", "pal-gripper", "schunk-wsg", "robotiq-2f-85", "robotiq-2f-140", "robotiq-epick", "custom", "no-ee"]
         ft_sensors = ["schunk-ft", None]
     else:
         end_effectors = [None]
@@ -38,8 +38,9 @@ for arm in [True, False]:
                     os.path.basename(em_file_path))
                 if extension == ".yaml":
                     f.write("#" + msg + "\n")
-                elif extension in [".xacro", ".xml", ".srdf"]:
-                    f.write("<!-- " + msg + "-->\n")
+                # If we add a comment at the begining of an xml the format is not correct.
+                #elif extension in [".xacro", ".xml", ".srdf"]:
+                #    f.write("<!-- " + msg + "-->\n")
 
                 f.write(expanded_contents)
             print("Generated " + expanded_file_name)

@@ -2,6 +2,404 @@
 Changelog for package tiago_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+2.3.17 (2023-11-20)
+-------------------
+* Merge branch 'load-motions' into 'erbium-devel'
+  Load motions according to end effector
+  See merge request robots/tiago_robot!206
+* Fix dependencies
+* Move load motions script to pal_motion_loader, modify bringup
+* Add script to load motions according to end effector
+* Contributors: Josef Svec, Sai Kishor Kothakota, davidfernandez
+
+2.3.16 (2023-11-08)
+-------------------
+
+2.3.15 (2023-10-23)
+-------------------
+
+2.3.14 (2023-10-11)
+-------------------
+* Merge branch 'change_license_to_apache' into 'erbium-devel'
+  change public license to Apache License 2.0
+  See merge request robots/tiago_robot!229
+* change public license to Apache License 2.0
+* Contributors: Jordan Palacios, Sai Kishor Kothakota
+
+2.3.13 (2023-08-09)
+-------------------
+* Merge branch 'fix_dynamic' into 'erbium-devel'
+  Add missing argument
+  See merge request robots/tiago_robot!220
+* Add missing argument
+* Contributors: Sai Kishor Kothakota, thomaspeyrucain
+
+2.3.12 (2023-06-12)
+-------------------
+
+2.3.11 (2023-04-18)
+-------------------
+* Merge branch 'update-joystick' into 'erbium-devel'
+  Update joystick device name
+  See merge request robots/tiago_robot!194
+* Update joystick device name
+* Contributors: David ter Kuile, Sai Kishor Kothakota
+
+2.3.10 (2023-03-13)
+-------------------
+
+2.3.9 (2022-12-13)
+------------------
+* Merge branch 'add-moveit-capability-loader' into 'erbium-devel'
+  Add argument for launching move_group
+  See merge request robots/tiago_robot!181
+* Set enable_moveit_camera arg in tiago_controllers.launch
+* Update use_moveit_camera set to true if advanced_grasping is true
+* Ensure moveit camera is always on when advanced grasping is loaded
+* Add advanced_grasping launch arguments
+* set default moveit_camera arg back to false
+* Enable moveit-camera propagation in launch files
+* Contributors: David ter Kuile, saikishor
+
+2.3.8 (2022-10-24)
+------------------
+
+2.3.7 (2022-08-10)
+------------------
+
+2.3.6 (2022-08-04)
+------------------
+* Merge branch 'use_usb_camera' into 'erbium-devel'
+  Update launch file and script to be able to use usb_camera instead of libuvc_camera
+  See merge request robots/tiago_robot!154
+* added usb_cam dependency
+* Update launch file and script to be able to use usb_camera instead of libuvc_camera
+* Contributors: Sai Kishor Kothakota, saikishor
+
+2.3.5 (2022-07-26)
+------------------
+
+2.3.4 (2022-07-21)
+------------------
+* Merge branch 'add_omni_tiago' into 'erbium-devel'
+  Add base_type to the missing launch files
+  See merge request robots/tiago_robot!153
+* address comment + adding mm11.launch to take into account the base_type
+* Merge the 2 .em files and create a script only for the motions
+* Add specific motions for the TIAGo omni
+* =Add base_type to the missing launch files
+* Contributors: saikishor, thomaspeyrucain, validation_1
+
+2.3.3 (2022-07-19)
+------------------
+
+2.3.2 (2022-05-17)
+------------------
+* added support for the new product ID from same vendor for endoscopic camera
+* Contributors: Sai Kishor Kothakota
+
+2.3.1 (2022-05-16)
+------------------
+* Merge branch 'new_endoscopic_camera_support' into 'erbium-devel'
+  added support for new endoscopic camera vendor
+  See merge request robots/tiago_robot!151
+* added support for new endoscopic camera vendor
+* Contributors: Sai Kishor Kothakota, saikishor
+
+2.3.0 (2022-05-03)
+------------------
+
+2.2.15 (2022-05-03)
+-------------------
+* Merge branch 'no-end-effector-bugfix' into 'erbium-devel'
+  No end effector bugfix
+  See merge request robots/tiago_robot!149
+* file_suffix consistency
+* Merge branch 'no-end-effector-bugfix' of gitlab:robots/tiago_robot into no-end-effector-bugfix
+* Apply 5 suggestion(s) to 4 file(s)
+* remove redundant spaces
+* remove redundant spaces
+* end effector back to hey-5
+* prevent ft sensor to load when no arm is attached
+* update motions
+* update epck gripper
+* edit motions config
+* update motions config file
+* Update eval function, generate scripts
+* delete wrongly named hardware yaml file
+* rewrite eval function for name of config files
+* edit motions config
+* update motions config file
+* made some changes
+* Update eval function, generate scripts
+* delete wrongly named hardware yaml file
+* rewrite eval function for name of config files
+* prevent ft sensor to load when no arm is attached
+* Merge branch 'no-end-effector-bugfix' of gitlab:robots/tiago_robot into no-end-effector-bugfix
+* update motions
+* remove.orig file|
+* rebase
+* rebase
+* update epck gripper
+* edit motions config
+* update motions config file
+* Update eval function, generate scripts
+* delete wrongly named hardware yaml file
+* rewrite eval function for name of config files
+* edit motions config
+* update motions config file
+* made some changes
+* Update eval function, generate scripts
+* delete wrongly named hardware yaml file
+* rewrite eval function for name of config files
+* update epck gripper
+* edit motions config
+* update motions config file
+* made some changes
+* Update eval function, generate scripts
+* delete wrongly named hardware yaml file
+* rewrite eval function for name of config files
+* edit motions config
+* update motions config file
+* made some changes
+* Update eval function, generate scripts
+* delete wrongly named hardware yaml file
+* rewrite eval function for name of config files
+* Contributors: David ter Kuile, saikishor
+
+2.2.14 (2022-04-20)
+-------------------
+
+2.2.13 (2022-03-23)
+-------------------
+* Merge branch 'fix_home_robotiq_2f_140' into 'erbium-devel'
+  Fix home position for robotiq-2f-140 + fix Reach max out of range motion + add effort_controller
+  See merge request robots/tiago_robot!148
+* Fix motions on grippers too close to joint limits + change home position for robotiq 2f 140
+* Fix home position for robotiq-2f-140 + fix Reach max out of range motion + add effort_controller
+* Contributors: saikishor, thomaspeyrucain
+
+2.2.12 (2022-03-18)
+-------------------
+
+2.2.11 (2022-03-18)
+-------------------
+* Merge branch 'add_robotiq_epick_gripper' into 'erbium-devel'
+  Add link to epick urdf
+  See merge request robots/tiago_robot!145
+* regenerate the motions after rebasing
+* Change config files to match new name and new controller + add joystick control
+* Change the name from vacuum to finger and add config file for controller
+* Add config files for robotiq-epick gripper
+* Contributors: Sai Kishor Kothakota, saikishor, thomaspeyrucain
+
+2.2.10 (2022-02-22)
+-------------------
+* Merge branch 'fix-offer-motion' into 'erbium-devel'
+  Fix offer motion for robotiq gripper
+  See merge request robots/tiago_robot!146
+* Fix offer motion for robotiq gripper
+* Contributors: saikishor, thomaspeyrucain
+
+2.2.9 (2022-01-19)
+------------------
+* Merge branch 'use_rsp' into 'erbium-devel'
+  Use robot_state_publisher instead of deprecated state_publisher
+  See merge request robots/tiago_robot!147
+* Use robot_state_publisher instead of deprecated state_publisher
+* Contributors: Jordan Palacios
+
+2.2.8 (2021-12-22)
+------------------
+
+2.2.7 (2021-11-25)
+------------------
+
+2.2.6 (2021-11-22)
+------------------
+
+2.2.5 (2021-11-19)
+------------------
+* Merge branch 'conditional_dependencies' into 'erbium-devel'
+  Conditional dependencies
+  See merge request robots/tiago_robot!140
+* change to package version 3
+* Contributors: Sai Kishor Kothakota, victor
+
+2.2.4 (2021-11-10)
+------------------
+
+2.2.3 (2021-11-10)
+------------------
+
+2.2.2 (2021-11-09)
+------------------
+
+2.2.1 (2021-11-09)
+------------------
+* Merge branch 'fix_xml_generation_error' into 'erbium-devel'
+  Fis xml generation error removing initial message
+  See merge request robots/tiago_robot!138
+* Fis xml generation error removing initial message
+* Contributors: Jordan Palacios, cescfolch
+
+2.2.0 (2021-11-03)
+------------------
+* Merge branch 'omni_base_robot' into 'erbium-devel'
+  Omni base robot
+  See merge request robots/tiago_robot!137
+* modified the .em file in order to generate the joy config files
+* Fixed copy paste error
+* Added speed limits to the joystick commands for the lateral mouvements
+* added dynamic footprint configuration for tiago with omni_base
+* preparing configuration for a tiago with omni base
+* Contributors: antoniobrandi, saikishor
+
+2.1.5 (2021-09-22)
+------------------
+* Merge branch 'offer-motion' into 'erbium-devel'
+  Open robotiq-2f-85 in offer motion
+  See merge request robots/tiago_robot!135
+* fix: open robotiq-2f-85 in offer motion
+* Contributors: victor, yueerro
+
+2.1.4 (2021-08-31)
+------------------
+
+2.1.3 (2021-08-06)
+------------------
+* Merge branch 'robotiq-impedance-issues' into 'erbium-devel'
+  fix: missing chain definition for robotiq gripper
+  See merge request robots/tiago_robot!131
+* fix: hey5 colliding with floor
+* Contributors: daniellopez, saikishor
+
+2.1.2 (2021-07-16)
+------------------
+
+2.1.1 (2021-06-01)
+------------------
+
+2.1.0 (2021-05-06)
+------------------
+* Merge branch 'robotiq_gripper' into 'erbium-devel'
+  Robotiq gripper
+  See merge request robots/tiago_robot!125
+* address MR review comments
+* run incremental action server for robotiq grippers
+* Update the motions of the robotiq grippers
+* generated tiago hardware configurations for the robotiq grippers
+* generate joy_teleop configurations
+* update the robotiq end effector naming
+* generate some config files for robotiq 85 and 140
+* Contributors: Sai Kishor Kothakota, saikishor
+
+2.0.58 (2021-04-09)
+-------------------
+* Merge branch 'add-endoscopic' into 'erbium-devel'
+  add static_transform_publisher for endoscopic and its optical frame
+  See merge request robots/tiago_robot!124
+* add static_transform_publisher for endoscopic and its optical frame
+* Contributors: saikishor, yueerro
+
+2.0.57 (2021-03-19)
+-------------------
+
+2.0.56 (2021-03-01)
+-------------------
+
+2.0.55 (2021-01-15)
+-------------------
+
+2.0.54 (2020-09-08)
+-------------------
+* Merge branch 'new-endoscopic-dual' into 'erbium-devel'
+  New endoscopic dual
+  See merge request robots/tiago_robot!118
+* make it executable
+* remove confirmation prompts
+* change logit to run script in different terminals and ony one fucntion
+* Merge branch 'new-endoscopic-dual' of gitlab:robots/tiago_robot into new-endoscopic-dual
+* enable automatic two cameras simultaneously using script
+* modify args using index to run dual
+* choose camera by serial (not working as serials are equal
+* automate runing endoscopic depending on vendor/product
+* adapt end_effector_camera.lauch to accpet arguments and 2 cameras
+* enable automatic two cameras simultaneously using script
+* modify args using index to run dual
+* choose camera by serial (not working as serials are equal
+* automate runing endoscopic depending on vendor/product
+* adapt end_effector_camera.lauch to accpet arguments and 2 cameras
+* Contributors: daniellopez, saikishor
+
+2.0.53 (2020-07-30)
+-------------------
+* Merge branch 'rename_tf_prefix' into 'erbium-devel'
+  Rename tf_prefix to robot_namespace
+  See merge request robots/tiago_robot!104
+* Rename tf_prefix to robot_namespace
+* Contributors: davidfernandez, victor
+
+2.0.52 (2020-07-27)
+-------------------
+
+2.0.51 (2020-07-15)
+-------------------
+
+2.0.50 (2020-07-10)
+-------------------
+* Merge branch 'add-no-safety-eps' into 'erbium-devel'
+  Add the option of disabling arm_safety_eps via launch file
+  See merge request robots/tiago_robot!115
+* Remove redundant parameter
+* Add the option of disabling arm_safety_eps via launch file
+* Contributors: Victor Lopez, victor
+
+2.0.49 (2020-07-01)
+-------------------
+* Merge branch 'add-master-calibration' into 'erbium-devel'
+  Add master calibration compatibility for eye hand and extrinsic
+  See merge request robots/tiago_robot!114
+* Use multipliers from master_calibration if available
+* Contributors: Victor Lopez, victor
+
+2.0.48 (2020-06-10)
+-------------------
+
+2.0.47 (2020-05-15)
+-------------------
+
+2.0.46 (2020-05-13)
+-------------------
+
+2.0.45 (2020-05-12)
+-------------------
+
+2.0.44 (2020-05-12)
+-------------------
+
+2.0.43 (2020-05-08)
+-------------------
+
+2.0.42 (2020-05-07)
+-------------------
+
+2.0.41 (2020-05-07)
+-------------------
+
+2.0.40 (2020-05-06)
+-------------------
+
+2.0.39 (2020-04-21)
+-------------------
+* Merge branch 'custom-ee' into 'erbium-devel'
+  Allow using custom end-effector
+  See merge request robots/tiago_robot!102
+* Add parameter files for custom EE
+* Add hardware for custom
+* Allow using custom end-effector
+* Contributors: davidfernandez, victor
+
 2.0.38 (2020-02-27)
 -------------------
 
