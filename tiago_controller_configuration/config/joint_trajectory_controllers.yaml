@@ -5,7 +5,7 @@ torso_controller:
 
   constraints:
     goal_time: 0.6
-    stopped_velocity_tolerance: 5.0 # FIXME: See #8429
+    stopped_velocity_tolerance: 0.02 # FIXME: See #8429
     torso_lift_joint:
       goal: 0.02
 
@@ -17,7 +17,7 @@ head_controller:
 
   constraints:
     goal_time: 2.0
-    stopped_velocity_tolerance: 5.0
+    stopped_velocity_tolerance: 0.02
     head_1_joint:
       goal: 0.5
     head_2_joint:
@@ -35,7 +35,7 @@ arm_controller:
     - arm_7_joint
   constraints:
     goal_time: 0.6
-    stopped_velocity_tolerance: 5.0
+    stopped_velocity_tolerance: 0.02
     arm_1_joint:
       goal: 0.02
     arm_2_joint:
